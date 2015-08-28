@@ -1,1 +1,1 @@
-n_canvas_for_redmine_plugin
+lean_canvas_for_redmine_plugin
