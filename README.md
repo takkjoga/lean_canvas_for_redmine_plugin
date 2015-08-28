@@ -1,0 +1,1 @@
+n_canvas_for_redmine_plugin
