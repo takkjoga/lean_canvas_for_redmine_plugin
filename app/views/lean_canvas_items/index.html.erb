@@ -1,0 +1,31 @@
+<h2>LeanCanvas</h2>
+
+<%= image_tag lean_canvas_lean_canvas_items_path(format: :svg) %>
+
+<table border="1">
+  <% @lean_canvas_items_map.each do |kind_name, lean_canvas_items| %>
+    <tr>
+      <th rowspan="<%= @lean_canvas_items_map[kind_name].count + 1 %>"><%= kind_name %></th>
+      <% lean_canvas_items.each_with_index do |lean_canvas_item, index| %>
+        <td>
+          <%= form_for(lean_canvas_item) do |f| %>
+            <%= f.text_field :value, value: lean_canvas_item.value %>
+            <%= f.submit("更新") %>
+          <% end %>
+          <%= button_to "削除", lean_canvas_item, method: :delete %>
+        </td>
+        <% if lean_canvas_items.count > 0 && index != @lean_canvas_items_map[kind_name].count %>
+          </tr>
+          <tr>
+        <% end %>
+      <% end %>
+      <td>
+        <%= form_for(LeanCanvasItem.new, url: {action: :create}) do |f| %>
+          <%= f.text_field :value %>
+          <%= f.hidden_field(:kind, value: LeanCanvasItem::Kind.const_get(kind_name)) %>
+          <%= f.submit("追加") %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>

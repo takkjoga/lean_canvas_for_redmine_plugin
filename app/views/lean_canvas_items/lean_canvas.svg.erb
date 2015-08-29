@@ -1,0 +1,66 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
+  <g id="outline">
+    <rect width="1000" height="600" class="outside"/>
+    <rect width="200" height="400" id="problem"/>
+    <text x="10" y="25" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">PROBLEM</tspan></text>
+    <% @lean_canvas_items_map[:PROBLEM].each_with_index do |lean_canvas_item, index| %>
+      <text x="10" y="<%= 25 + 20 * (index + 1) %>" fill="#ffffff" font-size="15"><%= lean_canvas_item.value %></text>
+    <% end %>
+
+    <rect width="200" height="200" x="200" id="solution"/>
+    <text x="210" y="25" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">SOLUTION</tspan></text>
+    <% @lean_canvas_items_map[:SOLUTION].each_with_index do |lean_canvas_item, index| %>
+      <text x="210" y="<%= 25 + 20 * (index + 1) %>" fill="#ffffff" font-size="15"><%= lean_canvas_item.value %></text>
+    <% end %>
+
+    <rect width="200" height="200" x="200" y="200" id="key_metrics"/>
+    <text x="210" y="225" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">KEY</tspan></text>
+    <text x="210" y="245" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">METRICS</tspan></text>
+    <% @lean_canvas_items_map[:KEY_METRICS].each_with_index do |lean_canvas_item, index| %>
+      <text x="210" y="<%= 245 + 20 * (index + 1) %>" fill="#ffffff" font-size="15"><%= lean_canvas_item.value %></text>
+    <% end %>
+
+    <rect width="200" height="400" x="400" id="unique_value_proposition"/>
+    <text x="410" y="25" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">UNIQUE</tspan></text>
+    <text x="410" y="45" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">VALUE</tspan></text>
+    <text x="410" y="65" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">PROPOSITION</tspan></text>
+    <% @lean_canvas_items_map[:UNIQUE_VALUE_PROPOSITION].each_with_index do |lean_canvas_item, index| %>
+      <text x="410" y="<%= 65 + 20 * (index + 1) %>" fill="#ffffff" font-size="15"><%= lean_canvas_item.value %></text>
+    <% end %>
+
+    <rect width="200" height="200" x="600" id="unfair_advantage"/>
+    <text x="610" y="25" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">UNFAIR</tspan></text>
+    <text x="610" y="45" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">ADVANTAGE</tspan></text>
+    <% @lean_canvas_items_map[:UNFAIR_ADVANTAGE].each_with_index do |lean_canvas_item, index| %>
+      <text x="610" y="<%= 45 + 20 * (index + 1) %>" fill="#ffffff" font-size="15"><%= lean_canvas_item.value %></text>
+    <% end %>
+
+    <rect width="200" height="200" x="600" y="200" id="channels"/>
+    <text x="610" y="225" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">CHANNELS</tspan></text>
+    <% @lean_canvas_items_map[:CHANNELS].each_with_index do |lean_canvas_item, index| %>
+      <text x="610" y="<%= 225 + 20 * (index + 1) %>" fill="#ffffff" font-size="15"><%= lean_canvas_item.value %></text>
+    <% end %>
+
+    <rect width="200" height="400" x="800" id="customer_segments"/>
+    <text x="810" y="25" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">CUSTOMER</tspan></text>
+    <text x="810" y="45" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">SEGMENTS</tspan></text>
+    <% @lean_canvas_items_map[:CUSTOMER_SEGMENTS].each_with_index do |lean_canvas_item, index| %>
+      <text x="810" y="<%= 45 + 20 * (index + 1) %>" fill="#ffffff" font-size="15"><%= lean_canvas_item.value %></text>
+    <% end %>
+
+    <rect width="500" height="200" y="400" id="cost_structure"/>
+    <text x="10" y="425" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">COST STRUCTURE</tspan></text>
+    <% @lean_canvas_items_map[:COST_STRUCTURE].each_with_index do |lean_canvas_item, index| %>
+      <text x="10" y="<%= 425 + 20 * (index + 1) %>" fill="#ffffff" font-size="15"><%= lean_canvas_item.value %></text>
+    <% end %>
+
+    <rect width="500" height="200" x="500" y="400" id="revenue_streams"/>
+    <text x="510" y="425" fill="#ffffff" font-size="20"><tspan fill="#ffffff" font-weight="bold">REVENUE STREAMS</tspan></text>
+    <% @lean_canvas_items_map[:REVENUE_STREAMS].each_with_index do |lean_canvas_item, index| %>
+      <text x="510" y="<%= 425 + 20 * (index + 1) %>" fill="#ffffff" font-size="15"><%= lean_canvas_item.value %></text>
+    <% end %>
+  </g>
+  <use xlink:href="#outline" fill="#ffffff" stroke="#a9a9a9"/>
+</svg>
